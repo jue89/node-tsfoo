@@ -1,6 +1,6 @@
 const fs = require('fs-ext');
 
-module.exports = {open, write, read, fstat, flock, close};
+module.exports = {...fs, open, write, read, fstat, flock, close};
 
 function open (path, mode) {
 	return new Promise((resolve, reject) => fs.open(path, mode, (err, fd) => {
