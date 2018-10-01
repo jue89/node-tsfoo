@@ -38,5 +38,7 @@
     "automock": false,
     "clearMocks": true
   },
-  "dependencies": {}
+  "dependencies": {
+    "fs-ext": "^1.2.1"
+  }
 }
