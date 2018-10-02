@@ -1,6 +1,6 @@
 const fs = require('fs-ext');
 
-module.exports = {...fs, open, write, read, fstat, flock, close, access, readFile};
+module.exports = {...fs, open, write, read, fstat, flock, close, access, readFile, stat, mkdir};
 
 function open (path, mode) {
 	return new Promise((resolve, reject) => fs.open(path, mode, (err, fd) => {
@@ -55,5 +55,19 @@ function readFile (path) {
 	return new Promise((resolve, reject) => fs.readFile(path, (err, data) => {
 		if (err) reject(err);
 		else resolve(data);
+	}));
+}
+
+function stat (path) {
+	return new Promise((resolve, reject) => fs.stat(path, (err, stat) => {
+		if (err) reject(err);
+		else resolve(stat);
+	}));
+}
+
+function mkdir (path) {
+	return new Promise((resolve, reject) => fs.mkdir(path, (err) => {
+		if (err) reject(err);
+		else resolve();
 	}));
 }

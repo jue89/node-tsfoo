@@ -10,3 +10,5 @@ module.exports.watchFile = jest.fn();
 module.exports.unwatchFile = jest.fn();
 module.exports.readFile = jest.fn((p, cb) => cb(null, Buffer.alloc(0)));
 module.exports.access = jest.fn((file, mode, cb) => cb(null));
+module.exports.mkdir = jest.fn((path, cb) => cb(null));
+module.exports.stat = jest.fn((path, cb) => cb(null, {isDirectory: () => true}));
