@@ -12,3 +12,32 @@ Some unordered thoughts:
  * The series can be read from while writing to it. The only connection between the writing and the reading task is the file system itself.
  * Reading and writing utilises that readable resp. writeable stream of node js in object mode.
  * Every series must have a pack and an unpack function attached to it. Pack converts values to the disk format und unpack from the disk format back to the value. This way series can hold any datatype as long as it consumes always the same amount of space.
+
+
+## Example
+
+```js
+const os = require('os');
+const tsfoo = require('tsfoo');
+
+// Everything is stored in a directory
+tsfoo.openDB('db-dir').then(async (db) => {
+	// Write current load into one series
+	const writeLoadSeries = await db.createWriteStream('load', {
+		// If the series hasn't created in the past, we must define some
+		// meta code that helps packing and unpacking numbers.
+		defaultMetaCode: await tsfoo.getMetaByType('number')
+	});
+	setInterval(() => writeLoadSeries.write({
+		timestamp: Date.now(),
+		value: os.loadavg()[0]
+	}), 10000);
+
+	// Read back written data
+	const readLoadSeries = await db.createReadStream('load', {
+		// Keep the file open and read newly written records
+		follow: true
+	});
+	readLoadSeries.on('data', (record) => console.log(record.timestamp, record.value));
+});
+```
