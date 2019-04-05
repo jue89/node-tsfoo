@@ -17,9 +17,9 @@ function write (fd, data, pos = 0) {
 }
 
 function read (fd, buffer, pos = 0) {
-	return new Promise((resolve, reject) => fs.read(fd, buffer, 0, buffer.length, pos, (err) => {
+	return new Promise((resolve, reject) => fs.read(fd, buffer, 0, buffer.length, pos, (err, bytesRead) => {
 		if (err) reject(err);
-		else resolve();
+		else resolve(bytesRead);
 	}));
 }
 
