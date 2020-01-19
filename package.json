@@ -18,9 +18,9 @@
   "author": "Juergen Fitschen <me@jue.yt>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jue89/tsfoo/issues"
+    "url": "https://github.com/jue89/node-tsfoo/issues"
   },
-  "homepage": "https://github.com/jue89/tsfoo#readme",
+  "homepage": "https://github.com/jue89/node-tsfoo#readme",
   "devDependencies": {
     "happiness": "^10.0.2",
     "jest": "^23.1.0"
