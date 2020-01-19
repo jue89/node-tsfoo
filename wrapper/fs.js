@@ -1,4 +1,5 @@
-const fs = require('fs-ext');
+const fs = require('fs');
+const fsExt = require('fs-ext');
 
 module.exports = {...fs, open, write, read, fstat, flock, close, access, readFile, stat, mkdir};
 
@@ -31,7 +32,7 @@ function fstat (fd) {
 }
 
 function flock (path, mode) {
-	return new Promise((resolve, reject) => fs.flock(path, mode, (err) => {
+	return new Promise((resolve, reject) => fsExt.flock(path, mode, (err) => {
 		if (err) reject(err);
 		else resolve();
 	}));

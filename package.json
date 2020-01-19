@@ -23,7 +23,7 @@
   "homepage": "https://github.com/jue89/node-tsfoo#readme",
   "devDependencies": {
     "happiness": "^10.0.2",
-    "jest": "^23.1.0"
+    "jest": "^24.9.0"
   },
   "happiness": {
     "globals": [
@@ -39,6 +39,6 @@
     "clearMocks": true
   },
   "dependencies": {
-    "fs-ext": "^1.2.1"
+    "fs-ext": "^2.0.0"
   }
 }
