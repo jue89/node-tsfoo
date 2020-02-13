@@ -39,6 +39,8 @@
     "clearMocks": true
   },
   "dependencies": {
-    "fs-ext": "^2.0.0"
+    "borc": "^2.1.1",
+    "fs-ext": "^2.0.0",
+    "qsem": "^1.0.0"
   }
 }
