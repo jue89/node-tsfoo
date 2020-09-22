@@ -23,7 +23,7 @@
   "homepage": "https://github.com/jue89/node-tsfoo#readme",
   "devDependencies": {
     "happiness": "^10.0.2",
-    "jest": "^24.9.0"
+    "jest": "^26.4.2"
   },
   "happiness": {
     "globals": [
