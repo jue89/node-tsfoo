@@ -7,3 +7,4 @@ module.exports.access = jest.fn((f, m, cb) => cb(null));
 module.exports.read = jest.fn((f, b, o, l, p, cb) => cb(null, b.length, b));
 module.exports.write = jest.fn((f, b, o, l, p, cb) => cb(null, b.length, b));
 module.exports.close = jest.fn((fd, cb) => cb(null));
+module.exports.fsync = jest.fn((fd, cb) => cb(null));
