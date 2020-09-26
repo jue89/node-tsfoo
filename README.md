@@ -50,7 +50,7 @@ Returns an instance of [`stream.Writable`](https://nodejs.org/docs/latest-v14.x/
 
 ```js
 db.createReader(series[, opts]).then((reader) => {
-	reader.read().then((record) => {...});
+	reader.read([ropts]).then((record) => {...});
 	reader.close().then(() => {...})
 })
 ```
@@ -64,6 +64,10 @@ Creates a Reader instance `reader` reading from `series`. `opts` can have the fo
 `reader.read()` returns a Promise which is resolved with:
  * `null` if the EOF is reached and `follow` is set to `false` or if the last record matching the `to` constraint has been streamed
  * or an Object containing the next record with the items `timestamp`, `series`, `value`.
+
+`ropts` is an object with the following properties:
+
+ * `blocking`: Boolean. If set to `false`, `read()` will reject with an Error if the EOF of the series has been reached. Default: `true`.
 
 `reader.close()` closes the reader. Its returned promise is resolved if the series has been closed.
 
