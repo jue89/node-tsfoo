@@ -1,5 +1,3 @@
-const openDB = require('./db.js').open;
-const getMetaByType = require('./meta.js').get;
-const createMultiplexer = require('./multiplexer.js').create;
+const {openDB} = require('./lib/db/index.js');
 
-module.exports = {openDB, getMetaByType, createMultiplexer};
+module.exports = {openDB};

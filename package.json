@@ -1,7 +1,7 @@
 {
   "name": "tsfoo",
-  "version": "0.0.0",
-  "description": "Footurama",
+  "version": "0.1.0",
+  "description": "Timeseries Database",
   "main": "index.js",
   "scripts": {
     "test": "happiness && jest --verbose",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jue89/tsfoo.git"
+    "url": "git+https://github.com/jue89/node-tsfoo.git"
   },
   "keywords": [
     "database",
@@ -18,12 +18,12 @@
   "author": "Juergen Fitschen <me@jue.yt>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jue89/tsfoo/issues"
+    "url": "https://github.com/jue89/node-tsfoo/issues"
   },
-  "homepage": "https://github.com/jue89/tsfoo#readme",
+  "homepage": "https://github.com/jue89/node-tsfoo#readme",
   "devDependencies": {
     "happiness": "^10.0.2",
-    "jest": "^23.1.0"
+    "jest": "^26.4.2"
   },
   "happiness": {
     "globals": [
@@ -39,6 +39,8 @@
     "clearMocks": true
   },
   "dependencies": {
-    "fs-ext": "^1.2.1"
+    "borc": "^2.1.1",
+    "fs-ext": "^2.0.0",
+    "qsem": "^1.0.0"
   }
 }
