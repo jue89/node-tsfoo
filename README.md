@@ -35,6 +35,7 @@ Creates a Writer instance `writer`. `series` is the series name the `record` is 
  * `value`: The value written to the database.
  * `timestamp`: The timestamp when `value` has been recorded. Default: `Date.now()`.
  * `series`: If no series has been stated during writer creation, this states the series, this record shall be written to.
+ * `ptr`: A number representing the record number in the series.
 
 `series.close()` closes the writer. Its returned Promise is resolved if the series has been closed.
 
