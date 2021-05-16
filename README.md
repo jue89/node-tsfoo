@@ -58,6 +58,7 @@ db.createReader(series[, opts]).then((reader) => {
 
 Creates a Reader instance `reader` reading from `series`. `opts` can have the following properties:
 
+ * `ptr`: Start reading after the given record.
  * `from`: A timestamp in ms. Start reading records after the given timestamp (i.e. excluding the record with the given timestamp).
  * `to`: A timestamp in ms. Start reading records until the given timestamp (i.e. including the record with the given timestamp.
  * `follow`: Boolean. If set to `false` the reader stops reading if it reached the end of the series. Default: `true`.
