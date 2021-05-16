@@ -35,6 +35,7 @@ Creates a Writer instance `writer`. `series` is the series name the `record` is 
  * `value`: The value written to the database.
  * `timestamp`: The timestamp when `value` has been recorded. Default: `Date.now()`.
  * `series`: If no series has been stated during writer creation, this states the series, this record shall be written to.
+ * `ptr`: A number representing the record number in the series.
 
 `series.close()` closes the writer. Its returned Promise is resolved if the series has been closed.
 
@@ -57,6 +58,7 @@ db.createReader(series[, opts]).then((reader) => {
 
 Creates a Reader instance `reader` reading from `series`. `opts` can have the following properties:
 
+ * `ptr`: Start reading after the given record.
  * `from`: A timestamp in ms. Start reading records after the given timestamp (i.e. excluding the record with the given timestamp).
  * `to`: A timestamp in ms. Start reading records until the given timestamp (i.e. including the record with the given timestamp.
  * `follow`: Boolean. If set to `false` the reader stops reading if it reached the end of the series. Default: `true`.
